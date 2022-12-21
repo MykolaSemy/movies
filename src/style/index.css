@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap");
+
+@layer base {
+  body {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+
+    user-select: none;
+    font-family: "DM Sans";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+  }
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+      monospace;
+  }
+}
+
+@layer components {
+  .app {
+    @apply w-full h-screen flex flex-col justify-start items-center;
+  }
+  .header {
+    @apply mt-2 w-full h-12 flex justify-center items-center;
+  }
+  .options-window {
+    @apply flex flex-col -left-0.5 bg-white top-12 border-2 border-black;
+  }
+  .option {
+    @apply flex justify-start items-center onHover;
+  }
+  .proposed {
+    @apply flex justify-center items-center cursor-pointer onHover px-4 py-3;
+  }
+  .search-input {
+    @apply h-full w-full outline-none px-4 py-3 border-2 border-black;
+  }
+  .proposed-window {
+    @apply absolute top-14 border-black border-2 w-full flex-col overflow-hidden;
+  }
+  .checkbox {
+    @apply w-5 h-5 m-3 cursor-pointer border-2  border-black aspect-square flex justify-center items-center;
+  }
+  .select {
+    @apply flex items-center justify-center ml-2 h-full relative border-2 border-black px-4 py-3;
+  }
+}
+
+@layer utilities {
+  .onHover {
+    @apply duration-200 ease-in-out hover:-translate-y-1 hover:shadow-[0px_4px_0px_0px_#1a202c,0px_3px_8px_0px_#00000024];
+  }
+}
